@@ -93,7 +93,7 @@ var memo_coll = function() {
 
 	// N.B.: a Collatz iteration is a tiny arithmetical operation
 	// relative to assigning and looking up values in associative arrays
-	// although this is much slower than the gross way
+	// so although this is much slower than the gross way
 	// it's the right way to do it for expensive operations
 };
 
