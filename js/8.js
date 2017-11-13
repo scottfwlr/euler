@@ -5,11 +5,11 @@ the_number = "731671765313306249192251196744265747423553491949349698352031277450
 var biggest = -1;
 
 for (var i = 0; i < the_number.length-13; i++) {
-	var arr = the_number.slice(i, i+13);
-	var candidate = arr.reduce(function(sum,value) {return sum*value});
-	if (candidate >= biggest) {
-		biggest = candidate;
-	}
+    var arr = the_number.slice(i, i+13);
+    var candidate = arr.reduce(function(sum,value) {return sum*value});
+    if (candidate >= biggest) {
+        biggest = candidate;
+    }
 }
 
 console.log( biggest ); // 23514624000

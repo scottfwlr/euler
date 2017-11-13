@@ -25,49 +25,49 @@ the_grid = [
 
 // range-checked here for convenience and readability's sake
 the_grid.access = function(n, m) {
-	if (n >= 0 && n <= this.length-1) {
-		if (m >= 0 && m <= this[n].length-1) {
-			return this[n][m];
-		} else {
-			throw "out of range";
-		}
-	}
+    if (n >= 0 && n <= this.length-1) {
+        if (m >= 0 && m <= this[n].length-1) {
+            return this[n][m];
+        } else {
+            throw "out of range";
+        }
+    }
 };
 
 // horizontal
 // the_grid[x][y], the_grid[x][y+1], ...
 function horizontal(n, m) {
-	return the_grid.access(n,m) *
-	the_grid.access(n,m+1) *
-	the_grid.access(n,m+2) *
-	the_grid.access(n,m+3);
+    return the_grid.access(n,m) *
+    the_grid.access(n,m+1) *
+    the_grid.access(n,m+2) *
+    the_grid.access(n,m+3);
 }
 
 // vertical
 // the_grid[x][y], the_grid[x+1][y], ...
 function vertical(n, m) {
-	return the_grid.access(n,m) *
-	the_grid.access(n+1,m) *
-	the_grid.access(n+2,m) *
-	the_grid.access(n+3,m);
+    return the_grid.access(n,m) *
+    the_grid.access(n+1,m) *
+    the_grid.access(n+2,m) *
+    the_grid.access(n+3,m);
 }
 
 // diagonal "backslash"
 // the_grid[x][y] the_grid[x+1][y+1], ...
 function backslash(n, m) {
-	return the_grid.access(n,m) *
-	the_grid.access(n+1,m+1) *
-	the_grid.access(n+2,m+2) *
-	the_grid.access(n+3,m+3);
+    return the_grid.access(n,m) *
+    the_grid.access(n+1,m+1) *
+    the_grid.access(n+2,m+2) *
+    the_grid.access(n+3,m+3);
 }
 
 // diagonal "forward slash"
 // the_grid[x][y] the_grid[x+1][y-1], ...
 function forward_slash(n, m) {
-	return the_grid.access(n,m) *
-	the_grid.access(n+1,m-1) *
-	the_grid.access(n+2,m-2) *
-	the_grid.access(n+3,m-3);
+    return the_grid.access(n,m) *
+    the_grid.access(n+1,m-1) *
+    the_grid.access(n+2,m-2) *
+    the_grid.access(n+3,m-3);
 }
 
 var biggest = -1;
@@ -78,27 +78,27 @@ var biggest = -1;
 // i just don't know how yet 
 
 for (var i = 0; i < the_grid.length; i++) {
-	for (var j = 0; j < the_grid.length; j++) {
-		try {
-			var candidate = horizontal(i,j);
-			if (candidate > biggest) { biggest = candidate; }
-		} catch(err) { }
+    for (var j = 0; j < the_grid.length; j++) {
+        try {
+            var candidate = horizontal(i,j);
+            if (candidate > biggest) { biggest = candidate; }
+        } catch(err) { }
 
-		try {
-			var candidate = vertical(i,j);
-			if (candidate > biggest) { biggest = candidate; }
-		} catch(err) { }
+        try {
+            var candidate = vertical(i,j);
+            if (candidate > biggest) { biggest = candidate; }
+        } catch(err) { }
 
-		try {
-			var candidate = backslash(i,j);
-			if (candidate > biggest) { biggest = candidate; }
-		} catch(err) { }
+        try {
+            var candidate = backslash(i,j);
+            if (candidate > biggest) { biggest = candidate; }
+        } catch(err) { }
 
-		try {
-			var candidate = forward_slash(i,j);
-			if (candidate > biggest) { biggest = candidate; }
-		} catch(err) { }
-	}
+        try {
+            var candidate = forward_slash(i,j);
+            if (candidate > biggest) { biggest = candidate; }
+        } catch(err) { }
+    }
 }
 
 console.log( biggest ); // 70600674
