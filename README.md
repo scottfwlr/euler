@@ -13,8 +13,7 @@ Quick script to grab each solution for a given problem and output a markdown doc
 What `compare.md` should look like:
 
 
->**Problem 1**
->Find the sum of all the multiples of 3 or 5 below 1000.
+>**Problem 1:** Find the sum of all the multiples of 3 or 5 below 1000.
 
 *C*
 ```C
@@ -61,3 +60,7 @@ console.log(total); // 233168
 puts (1..999).select { |n| n % 3 == 0 or n % 5 == 0 }.reduce(:+) # 233168
 ```
 
+
+>**Problem 2:** By considering the terms in the Fibonacci sequence...
+
+etc.
