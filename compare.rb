@@ -1,4 +1,4 @@
-DEBUG = true
+DEBUG = false
 
 arr = {}
 
@@ -14,6 +14,6 @@ Dir.glob('*/*') do |f|
     instructions, file = File.read(f).split('<<<--->>>')
     arr[num]['instructions'] ||= instructions 
     arr[num][lang] = file.strip
-    puts "done" if DEBUG
+    puts "done: #{arr[num][lang].length}" if DEBUG
   end
 end
