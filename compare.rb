@@ -1,33 +1,19 @@
+DEBUG = true
+
 arr = {}
 
 # Goals: first 100
-1.upto(100) { |n| arr[n] = {} }
+1.upto(100) { |n| arr[n.to_s] = {} }
 
-def exercise_template(str)
-  """
-  **Problem #{num}:** #{instructions}
-  """
-end
 
-def parse_file(f, num, lang)
-  file = File.read(f)
-  comment = case lang
-  when 'c', 'js'
-    '//'
-  when 'rb', 'exs'
-    '#'
-  end
-
-  
-end
-
-Dir.glob('*/') do |folder|
-  Dir.glob("#{folder}*").reject { |e| 
-    # filter out extraneous c and ruby files 
-    e[/\.out/] or e[/hello.c/] or e[/bin/] or e[/Gemfile/] 
-  }.each do |file|
-    num, lang = file[/\/\d+\.w+/].split('.')
-    parse_file(file, num, lang)
-
+Dir.glob('*/*') do |f|
+  # filter out extraneous c and ruby files 
+  unless f[/\.out/] or f[/hello.c/] or f[/bin/] or f[/Gemfile/] 
+    print "#{f}... " if DEBUG
+    num, lang = f[/\d+\.\w+/].split('.')
+    instructions, file = File.read(f).split('<<<--->>>')
+    arr[num]['instructions'] ||= instructions 
+    arr[num][lang] = file
+    puts "done" if DEBUG
   end
 end
