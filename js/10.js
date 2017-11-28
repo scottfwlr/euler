@@ -1,4 +1,4 @@
-// Find the sum of all the primes below two million.
+// Find the sum of all the primes below two million. <<<--->>>
 
 // from 7.js
 function prime_test(n, arr) {

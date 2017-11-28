@@ -13,7 +13,7 @@ Dir.glob('*/*') do |f|
     num, lang = f[/\d+\.\w+/].split('.')
     instructions, file = File.read(f).split('<<<--->>>')
     arr[num]['instructions'] ||= instructions 
-    arr[num][lang] = file
+    arr[num][lang] = file.strip
     puts "done" if DEBUG
   end
 end

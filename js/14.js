@@ -4,7 +4,7 @@
 // n is 1    -> done
 
 // it is thought that all starting numbers finish at 1
-// Which starting number, under one million, produces the longest chain?
+// Which starting number, under one million, produces the longest chain? <<<--->>>
 
 // the gross way is to just collatz each number and look for the longest chain
 

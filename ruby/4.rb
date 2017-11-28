@@ -1,4 +1,4 @@
-# Find the largest palindrome made from the product of two 3-digit numbers.
+# Find the largest palindrome made from the product of two 3-digit numbers. <<<--->>>
 
 def palindrome?(str)
   str === str.reverse

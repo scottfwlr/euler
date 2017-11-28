@@ -1,5 +1,5 @@
 // There exists exactly one Pythagorean triplet for which a + b + c = 1000.
-// Find the product a*b*c
+// Find the product a*b*c <<<--->>>
 
 function triplet(a, b, c) {
     if ((a*a + b*b) == c*c) {

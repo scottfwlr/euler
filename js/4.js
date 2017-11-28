@@ -1,4 +1,4 @@
-// Find the largest palindrome made from the product of two 3-digit numbers.
+// Find the largest palindrome made from the product of two 3-digit numbers. <<<--->>>
 
 palindrome = function(str) {
     var pal = str.toString().split("").reverse().join("");

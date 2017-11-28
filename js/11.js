@@ -21,7 +21,7 @@ the_grid = [
 [01, 70, 54, 71, 83, 51, 54, 69, 16, 92, 33, 48, 61, 43, 52, 01, 89, 19, 67, 48]
 ];
 
-// What is the greatest product of four adjacent numbers in the same direction (up, down, left, right, or diagonally) in the 20×20 grid?
+// What is the greatest product of four adjacent numbers in the same direction (up, down, left, right, or diagonally) in the 20×20 grid? <<<--->>>
 
 // range-checked here for convenience and readability's sake
 the_grid.access = function(n, m) {
