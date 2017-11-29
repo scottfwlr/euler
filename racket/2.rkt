@@ -16,6 +16,6 @@
   (< x 4000000))
 
 (println
-  (foldl + 0 (filter (even? (filter below-4m? (fib (list 2 1) 100)))
-  ) ; 9227463
-; something is very wrong here
+  (foldl + 0 (filter even? (filter below-4m? (fib (list 2 1) 100))))
+  ) ; 4613732
+; okay "(filter (and foo bar) list)" doesn't work it seems
