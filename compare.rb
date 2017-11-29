@@ -1,4 +1,10 @@
 DEBUG = false
+LANG = {
+  'c' => 'C',
+  'js' => 'Javascript',
+  'rb' => 'Ruby',
+  'exs' => 'Elixir'
+}
 
 arr = {}
 
@@ -19,14 +25,23 @@ Dir.glob('*/*') do |f|
 end
 
 def exercise_template(num, subarr)
-  instructions = subarr.delete('instructions')
-  template = ">**Problem #{num}:** #{instructions}\n\n"
-  subarr.each do |lang, str|
-    template += "*#{lang}*\n"
+  instr = subarr.delete('instructions').split("\n").map { |e|
+    e.sub('# ','').sub('// ','')
+  }.join("\n>")
+  template = ">**Problem #{num}:** #{instr}\n\n"
+  subarr.sort_by{|k,v| k }.each do |lang, str|
+    template += "*#{LANG[lang]}*\n"
     template += "```#{lang}\n"
     template += str
-    template += "\n```\n"
+    template += "\n```\n\n"
   end
   template
 end
 
+doc = "#Multilingual Project Euler\n\n"
+
+arr.sort_by{|k,v| k.to_i }.each do |num, subarr|
+  doc += exercise_template(num, subarr) unless subarr.empty?
+end
+
+File.write('compare.md', doc)
