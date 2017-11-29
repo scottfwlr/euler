@@ -5,7 +5,7 @@ arr = {}
 # Goals: first 100
 1.upto(100) { |n| arr[n.to_s] = {} }
 
-
+# parse files 
 Dir.glob('*/*') do |f|
   # filter out extraneous c and ruby files 
   unless f[/\.out/] or f[/hello.c/] or f[/bin/] or f[/Gemfile/] 
@@ -25,8 +25,8 @@ def exercise_template(num, subarr)
     template += "*#{lang}*\n"
     template += "```#{lang}\n"
     template += str
-    template += "\n```"
+    template += "\n```\n"
   end
-
+  template
 end
 
