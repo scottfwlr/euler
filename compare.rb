@@ -17,3 +17,16 @@ Dir.glob('*/*') do |f|
     puts "done: #{arr[num][lang].length}" if DEBUG
   end
 end
+
+def exercise_template(num, subarr)
+  instructions = subarr.delete('instructions')
+  template = ">**Problem #{num}:** #{instructions}\n\n"
+  subarr.each do |lang, str|
+    template += "*#{lang}*\n"
+    template += "```#{lang}\n"
+    template += str
+    template += "\n```"
+  end
+
+end
+
