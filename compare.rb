@@ -28,17 +28,17 @@ def exercise_template(num, subarr)
   instr = subarr.delete('instructions').split("\n").map { |e|
     e.sub('# ','').sub('// ','')
   }.join("\n>")
-  template = ">**Problem #{num}:** #{instr}\n\n"
+  template = "### Problem #{num}\n>#{instr}\n\n"
   subarr.sort_by{|k,v| k }.each do |lang, str|
     template += "*#{LANG[lang]}*\n"
     template += "```#{lang}\n"
     template += str
-    template += "\n```\n\n"
+    template += "\n```\n\n\n\n"
   end
   template
 end
 
-doc = "#Multilingual Project Euler\n\n"
+doc = "# Multilingual Project Euler Solutions\n\n"
 
 arr.sort_by{|k,v| k.to_i }.each do |num, subarr|
   doc += exercise_template(num, subarr) unless subarr.empty?
