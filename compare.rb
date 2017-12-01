@@ -3,7 +3,8 @@ LANG = {
   'c' => 'C',
   'js' => 'Javascript',
   'rb' => 'Ruby',
-  'exs' => 'Elixir'
+  'exs' => 'Elixir',
+  'rkt' => 'Racket'
 }
 
 arr = {}
@@ -26,7 +27,7 @@ end
 
 def exercise_template(num, subarr)
   instr = subarr.delete('instructions').split("\n").map { |e|
-    e.sub('# ','').sub('// ','')
+    e.sub('# ','').sub('// ','').sub('; ','')
   }.join("\n>")
   template = "### Problem #{num}\n>#{instr}\n\n"
   subarr.sort_by{|k,v| k }.each do |lang, str|
