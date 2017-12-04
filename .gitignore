@@ -1,3 +1,4 @@
 *.out
 Gemfile.lock
 .bundle/
+bin/
