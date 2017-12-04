@@ -75,7 +75,7 @@ end
 the_grid = Grid.new(this_particular_grid)
 p the_grid.adjacents(4).map { |arr| arr.reduce(:*) }.max # 70600674
 # for the general solution to "getting the greatest f() of x adjacent numbers in an n*n grid":
-# Grid.new( <n*n grid> ).adjacents( <x> ).map { |arr| <f() of arr> }
+# Grid.new( <n*n grid> ).adjacents( <x> ).map { |arr| <f() of arr> }.max
 
 
 # note that 
